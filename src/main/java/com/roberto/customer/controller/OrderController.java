@@ -1,6 +1,7 @@
 package com.roberto.customer.controller;
 
 import com.roberto.customer.dto.OrderRequest;
+import com.roberto.customer.dto.OrderResponse;
 import com.roberto.customer.entity.Customer;
 import com.roberto.customer.repository.CustomerRepository;
 import com.roberto.customer.repository.ProductRepository;
@@ -29,5 +30,10 @@ public class OrderController {
     @GetMapping("/findAllOrders")
     public List<Customer> findAllOrders(){
         return customerRepository.findAll();
+    }
+
+    @GetMapping("/getInfo")
+    public List<OrderResponse> getJoinInformation(){
+        return customerRepository.getJoinInformation();
     }
 }
